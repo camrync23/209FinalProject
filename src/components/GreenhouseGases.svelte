@@ -1,7 +1,7 @@
 <section id="greenhouse-gases">
     <h2>What Are Greenhouse Gases?</h2>
     <div class="visual">
-    <img src="/images/1200px-Greenhouse-effect-t2.png" alt="Illustration of the greenhouse effect" width="600">
+      <img src="/images/1200px-Greenhouse-effect-t2.png" alt="Illustration of the greenhouse effect">
     </div>
     <p>Greenhouse gases (GHGs) are gases in the Earth's atmosphere that trap heat, creating a "greenhouse effect" that warms the planet. These gases, such as carbon dioxide (CO₂), methane (CH₄), and nitrous oxide (N₂O), naturally occur in the atmosphere but have increased dramatically due to human activities like burning fossil fuels, deforestation, and industrial farming. As these gases build up, they prevent some of the heat from escaping into space, leading to a gradual rise in global temperatures.</p>
   </section>
@@ -10,8 +10,23 @@
     section {
       margin-bottom: 2rem;
     }
+  
     .visual {
       text-align: center;
+      margin: 20px 0;
+    }
+  
+    /* Ensure the image is responsive */
+    .visual img {
+      max-width: 100%;   /* Ensure image scales to fit the container */
+      height: auto;      /* Maintain aspect ratio */
+      width: 600px;      /* Set a base width */
+    }
+  
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
     }
   </style>
   
