@@ -13,16 +13,5 @@
   <footer>
     <p>Data Source: <a href="https://www.fao.org" target="_blank">FAO</a></p>
   </footer>
-  
-  <style>
-    header, footer {
-      text-align: center;
-      padding: 1em;
-      background-color: #f8f9fa;
-    }
-    footer a {
-      color: #007bff;
-      text-decoration: none;
-    }
-  </style>
+
   

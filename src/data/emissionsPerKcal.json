@@ -1,0 +1,302 @@
+[
+  {
+    "": 0,
+    "Food product": "Oatmeal",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 4.281357225,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 183.9115517,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 0.945482272,
+    "Land use per 1000kcal (m² per 1000kcal)": 2.897445673,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 7162.104461,
+    "Category": "Grains & Cereals"
+  },
+  {
+    "": 1,
+    "Food product": "Rice",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 9.51437873,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 609.9837222,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 1.207270754,
+    "Land use per 1000kcal (m² per 1000kcal)": 0.7596310359999999,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 13449.891480000002,
+    "Category": "Grains & Cereals"
+  },
+  {
+    "": 2,
+    "Food product": "Potatoes",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 4.7540983610000005,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 80.73770492,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 0.628415301,
+    "Land use per 1000kcal (m² per 1000kcal)": 1.202185792,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 3762.568306,
+    "Category": "Grains & Cereals"
+  },
+  {
+    "": 3,
+    "Food product": "Cane Sugar",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 4.820512821,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 176.66666669999998,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 0.911680912,
+    "Land use per 1000kcal (m² per 1000kcal)": 0.581196581,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 4683.361822999999,
+    "Category": "Sugars & Sweeteners"
+  },
+  {
+    "": 4,
+    "Food product": "Beet Sugar",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 1.541310541,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 62.02279202,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 0.515669516,
+    "Land use per 1000kcal (m² per 1000kcal)": 0.5213675210000001,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 2704.643875,
+    "Category": "Sugars & Sweeteners"
+  },
+  {
+    "": 5,
+    "Food product": "Nuts",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 3.113821138,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 672.1626016,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 0.069918699,
+    "Land use per 1000kcal (m² per 1000kcal)": 2.107317073,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 37380.45528,
+    "Category": "Nuts & Seeds"
+  },
+  {
+    "": 6,
+    "Food product": "Groundnuts",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 2.437931034,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 319.362069,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 0.556896552,
+    "Land use per 1000kcal (m² per 1000kcal)": 1.570689655,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 10654.81034,
+    "Category": "Nuts & Seeds"
+  },
+  {
+    "": 7,
+    "Food product": "Palm Oil",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 1.207013575,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 0.7239819000000001,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 0.828054299,
+    "Land use per 1000kcal (m² per 1000kcal)": 0.273755656,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 4.095022623999999,
+    "Category": "Oils & Fats"
+  },
+  {
+    "": 8,
+    "Food product": "Sunflower Oil",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 5.730769231,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 114.0158371,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 0.407239819,
+    "Land use per 1000kcal (m² per 1000kcal)": 1.997737557,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 4114.18552,
+    "Category": "Oils & Fats"
+  },
+  {
+    "": 9,
+    "Food product": "Rapeseed Oil",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 2.17081448,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 26.88914027,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 0.426470588,
+    "Land use per 1000kcal (m² per 1000kcal)": 1.202488688,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 1198.382353,
+    "Category": "Oils & Fats"
+  },
+  {
+    "": 10,
+    "Food product": "Olive Oil",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 4.214932127,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 242.2850679,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 0.6131221720000001,
+    "Land use per 1000kcal (m² per 1000kcal)": 2.976244344,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 20076.9457,
+    "Category": "Oils & Fats"
+  },
+  {
+    "": 11,
+    "Food product": "Tomatoes",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 39.52631579,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 1946.315789,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 11,
+    "Land use per 1000kcal (m² per 1000kcal)": 4.210526316,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 28082.63158,
+    "Category": "Vegetables"
+  },
+  {
+    "": 12,
+    "Food product": "Onions & Leeks",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 8.756756757,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 38.64864865,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 1.351351351,
+    "Land use per 1000kcal (m² per 1000kcal)": 1.054054054,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 2518.918919,
+    "Category": "Vegetables"
+  },
+  {
+    "": 13,
+    "Food product": "Root Vegetables",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 4.351351351,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 76.75675676,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 1.162162162,
+    "Land use per 1000kcal (m² per 1000kcal)": 0.8918918920000001,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 2511.351351,
+    "Category": "Vegetables"
+  },
+  {
+    "": 14,
+    "Food product": "Brassicas",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 29.47058824,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 702.3529412,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 3,
+    "Land use per 1000kcal (m² per 1000kcal)": 3.235294118,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 49735.88235,
+    "Category": "Vegetables"
+  },
+  {
+    "": 15,
+    "Food product": "Citrus Fruit",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 7,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 258.4375,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 1.21875,
+    "Land use per 1000kcal (m² per 1000kcal)": 2.6875,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 14570.9375,
+    "Category": "Fruits"
+  },
+  {
+    "": 16,
+    "Food product": "Bananas",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 5.483333332999999,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 190.8333333,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 1.4333333330000002,
+    "Land use per 1000kcal (m² per 1000kcal)": 3.216666667,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 1103.166667,
+    "Category": "Fruits"
+  },
+  {
+    "": 17,
+    "Food product": "Apples",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 3.020833333,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 375.2083333,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 0.895833333,
+    "Land use per 1000kcal (m² per 1000kcal)": 1.3125,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 26976.25,
+    "Category": "Fruits"
+  },
+  {
+    "": 18,
+    "Food product": "Berries & Grapes",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 10.73684211,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 736.1403508999999,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 2.684210526,
+    "Land use per 1000kcal (m² per 1000kcal)": 4.228070175,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 37126.49123,
+    "Category": "Fruits"
+  },
+  {
+    "": 19,
+    "Food product": "Coffee",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 197.3571429,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 46.25,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 50.94642857,
+    "Land use per 1000kcal (m² per 1000kcal)": 38.60714286,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 601.7857142999999,
+    "Category": "Beverages"
+  },
+  {
+    "": 20,
+    "Food product": "Dark Chocolate",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 16.84332689,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 104.5647969,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 9.023210832,
+    "Land use per 1000kcal (m² per 1000kcal)": 13.3384913,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 556.9052224,
+    "Category": "Chocolate"
+  },
+  {
+    "": 21,
+    "Food product": "Beef (beef herd)",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 110.4065934,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 531.5750916000001,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 36.43956044,
+    "Land use per 1000kcal (m² per 1000kcal)": 119.4908425,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 12722.52747,
+    "Category": "Animal Protein"
+  },
+  {
+    "": 22,
+    "Food product": "Beef (dairy herd)",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 133.8058608,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 994.2490842,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 12.1978022,
+    "Land use per 1000kcal (m² per 1000kcal)": 15.83882784,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 43884.68864,
+    "Category": "Animal Protein"
+  },
+  {
+    "": 23,
+    "Food product": "Lamb & Mutton",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 30.64037855,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 568.7066246,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 12.52996845,
+    "Land use per 1000kcal (m² per 1000kcal)": 116.659306,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 44771.29338,
+    "Category": "Animal Protein"
+  },
+  {
+    "": 24,
+    "Food product": "Pig Meat",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 31.958159,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 751.3807531,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 5.150627615,
+    "Land use per 1000kcal (m² per 1000kcal)": 7.263598326,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 27977.99163,
+    "Category": "Animal Protein"
+  },
+  {
+    "": 25,
+    "Food product": "Poultry Meat",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 26.32432432,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 356.7567568,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 5.335135135,
+    "Land use per 1000kcal (m² per 1000kcal)": 6.605405405,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 7663.72973,
+    "Category": "Animal Protein"
+  },
+  {
+    "": 26,
+    "Food product": "Milk",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 17.75,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 1047,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 5.25,
+    "Land use per 1000kcal (m² per 1000kcal)": 14.91666667,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 32977.16667,
+    "Category": "Dairy Products"
+  },
+  {
+    "": 27,
+    "Food product": "Cheese",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 25.41860465,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 1448.372093,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 6.170542636,
+    "Land use per 1000kcal (m² per 1000kcal)": 22.68475452,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 46731.42119,
+    "Category": "Dairy Products"
+  },
+  {
+    "": 28,
+    "Food product": "Eggs",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 15.11111111,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 401.1805556000001,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 3.2430555560000003,
+    "Land use per 1000kcal (m² per 1000kcal)": 4.354166667,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 12487.98611,
+    "Category": "Dairy Products"
+  },
+  {
+    "": 29,
+    "Food product": "Fish (farmed)",
+    "Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)": 131.3519553,
+    "Freshwater withdrawals per 1000kcal (liters per 1000kcal)": 2062.178771,
+    "Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)": 7.61452514,
+    "Land use per 1000kcal (m² per 1000kcal)": 4.698324022,
+    "Scarcity-weighted water use per 1000kcal (liters per 1000 kilocalories)": 23224.69274,
+    "Category": "Animal Protein"
+  }
+]

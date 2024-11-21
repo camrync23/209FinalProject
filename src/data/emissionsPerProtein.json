@@ -1,0 +1,262 @@
+[
+  {
+    "": 0,
+    "Food product": "Oatmeal",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 8.638461538,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 371.0769231,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 1.907692308,
+    "Land use per 100g protein (m² per 100g protein)": 5.846153846,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 14450.92308,
+    "Category": "Grains & Cereals"
+  },
+  {
+    "": 1,
+    "Food product": "Rice",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 49.3943662,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 3166.760563,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 6.267605634,
+    "Land use per 100g protein (m² per 100g protein)": 3.943661972,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 69825.77465,
+    "Category": "Grains & Cereals"
+  },
+  {
+    "": 2,
+    "Food product": "Potatoes",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 20.47058824,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 347.6470588,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 2.705882353,
+    "Land use per 100g protein (m² per 100g protein)": 5.176470588,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 16201.17647,
+    "Category": "Grains & Cereals"
+  },
+  {
+    "": 3,
+    "Food product": "Other Pulses",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 7.97758057,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 203.503036,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 0.836057917,
+    "Land use per 100g protein (m² per 100g protein)": 7.272302662,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 10498.55208,
+    "Category": "Pulses & Legumes"
+  },
+  {
+    "": 4,
+    "Food product": "Peas",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 3.384338434,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 178.48784880000002,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 0.441044104,
+    "Land use per 100g protein (m² per 100g protein)": 3.357335734,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 12577.94779,
+    "Category": "Pulses & Legumes"
+  },
+  {
+    "": 5,
+    "Food product": "Nuts",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 11.72688304,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 2531.414574,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 0.263319045,
+    "Land use per 100g protein (m² per 100g protein)": 7.936313533,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 140777.5873,
+    "Category": "Nuts & Seeds"
+  },
+  {
+    "": 6,
+    "Food product": "Groundnuts",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 5.401069519,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 707.5248281,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 1.233766234,
+    "Land use per 100g protein (m² per 100g protein)": 3.479755539,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 23605.00382,
+    "Category": "Nuts & Seeds"
+  },
+  {
+    "": 7,
+    "Food product": "Tomatoes",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 68.27272727,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 3361.818182,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 19,
+    "Land use per 100g protein (m² per 100g protein)": 7.272727272999999,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 48506.36364,
+    "Category": "Vegetables"
+  },
+  {
+    "": 8,
+    "Food product": "Onions & Leeks",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 24.92307692,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 110,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 3.846153846,
+    "Land use per 100g protein (m² per 100g protein)": 3,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 7169.230769,
+    "Category": "Vegetables"
+  },
+  {
+    "": 9,
+    "Food product": "Root Vegetables",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 16.1,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 284,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 4.3,
+    "Land use per 100g protein (m² per 100g protein)": 3.3,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 9292,
+    "Category": "Vegetables"
+  },
+  {
+    "": 10,
+    "Food product": "Brassicas",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 45.54545455,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 1085.4545449999998,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 4.6363636360000005,
+    "Land use per 100g protein (m² per 100g protein)": 5,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 76864.54545,
+    "Category": "Vegetables"
+  },
+  {
+    "": 11,
+    "Food product": "Citrus Fruit",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 37.33333333,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 1378.333333,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 6.5,
+    "Land use per 100g protein (m² per 100g protein)": 14.33333333,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 77711.66667,
+    "Category": "Fruits"
+  },
+  {
+    "": 12,
+    "Food product": "Bananas",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 36.55555556,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 1272.222222,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 9.555555556,
+    "Land use per 100g protein (m² per 100g protein)": 21.44444444,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 7354.444444,
+    "Category": "Fruits"
+  },
+  {
+    "": 13,
+    "Food product": "Apples",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 48.33333333,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 6003.333333,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 14.33333333,
+    "Land use per 100g protein (m² per 100g protein)": 21,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 431620,
+    "Category": "Fruits"
+  },
+  {
+    "": 14,
+    "Food product": "Berries & Grapes",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 61.2,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 4196,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 15.3,
+    "Land use per 100g protein (m² per 100g protein)": 24.1,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 211621,
+    "Category": "Fruits"
+  },
+  {
+    "": 15,
+    "Food product": "Coffee",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 138.15,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 32.375,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 35.6625,
+    "Land use per 100g protein (m² per 100g protein)": 27.025,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 421.25,
+    "Category": "Beverages"
+  },
+  {
+    "": 16,
+    "Food product": "Dark Chocolate",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 174.16,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 1081.2,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 93.3,
+    "Land use per 100g protein (m² per 100g protein)": 137.92,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 5758.4,
+    "Category": "Chocolate"
+  },
+  {
+    "": 17,
+    "Food product": "Beef (beef herd)",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 151.1584754,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 727.7833501,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 49.88966901,
+    "Land use per 100g protein (m² per 100g protein)": 163.5957874,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 17418.50552,
+    "Category": "Animal Protein"
+  },
+  {
+    "": 18,
+    "Food product": "Beef (dairy herd)",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 185.0506586,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 1375.0253289999998,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 16.86930091,
+    "Land use per 100g protein (m² per 100g protein)": 21.9047619,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 60691.59068,
+    "Category": "Animal Protein"
+  },
+  {
+    "": 19,
+    "Food product": "Lamb & Mutton",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 48.54072964,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 900.9495252,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 19.85007496,
+    "Land use per 100g protein (m² per 100g protein)": 184.8125937,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 70927.03648,
+    "Category": "Animal Protein"
+  },
+  {
+    "": 20,
+    "Food product": "Pig Meat",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 47.20642769,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 1109.888752,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 7.60815822,
+    "Land use per 100g protein (m² per 100g protein)": 10.72929543,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 41327.19407,
+    "Category": "Animal Protein"
+  },
+  {
+    "": 21,
+    "Food product": "Poultry Meat",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 28.11778291,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 381.0623557,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 5.698614319,
+    "Land use per 100g protein (m² per 100g protein)": 7.055427252,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 8185.854503,
+    "Category": "Animal Protein"
+  },
+  {
+    "": 22,
+    "Food product": "Milk",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 32.27272727,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 1903.636364,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 9.5,
+    "Land use per 100g protein (m² per 100g protein)": 27.12121212,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 59958.48485,
+    "Category": "Dairy Products"
+  },
+  {
+    "": 23,
+    "Food product": "Cheese",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 44.55163043,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 2538.586957,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 10.81521739,
+    "Land use per 100g protein (m² per 100g protein)": 39.75996377,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 81906.97464,
+    "Category": "Dairy Products"
+  },
+  {
+    "": 24,
+    "Food product": "Eggs",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 19.61067051,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 520.6380678,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 4.208723864,
+    "Land use per 100g protein (m² per 100g protein)": 5.650684932000001,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 16206.4708,
+    "Category": "Dairy Products"
+  },
+  {
+    "": 25,
+    "Food product": "Fish (farmed)",
+    "Eutrophying emissions per 100g protein (gPO₄eq per 100 grams protein)": 103.1001973,
+    "Freshwater withdrawals per 100g protein (liters per 100g protein)": 1618.636264,
+    "Greenhouse gas emissions per 100g protein (kgCO₂eq per 100g protein)": 5.976759483,
+    "Land use per 100g protein (m² per 100g protein)": 3.687787766,
+    "Scarcity-weighted water use per 100g protein (liters per 100g protein)": 18229.42337,
+    "Category": "Animal Protein"
+  }
+]
