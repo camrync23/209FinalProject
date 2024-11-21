@@ -106,8 +106,7 @@
     <h2>The Connection Between GHGs and Climate Change</h2>
     <div id="co2-temperature-chart"></div>
     <p>
-      Human activities have significantly increased GHG levels, causing global warming
-      and extreme weather events.
+      This warming effect is the primary driver of climate change, causing disruptions in weather patterns, rising sea levels, and more extreme weather events. As global temperatures increase, ecosystems and human societies face greater challenges, including heatwaves, droughts, and flooding. The rapid rise in GHGs due to human activities has accelerated these changes, underscoring the urgent need for action to reduce emissions and mitigate climate impacts.
     </p>
   </section>
   

@@ -4,6 +4,7 @@
   import ClimateChange from '../components/ClimateChange.svelte';
   import FoodProduction from '../components/FoodProduction.svelte';
   import ProjectAims from '../components/ProjectAims.svelte';
+  import FoodComparisonTool from '../components/FoodComparisonTool.svelte';
 
   // Track which section is active
   let activeSection = 'greenhouseGases';  // Start with the first section
@@ -16,6 +17,7 @@
     <button on:click={() => activeSection = 'climateChange'}>GHGs and Climate Change</button>
     <button on:click={() => activeSection = 'foodProduction'}>Why Food Production Matters</button>
     <button on:click={() => activeSection = 'projectAims'}>What This Project Aims to Explore</button>
+    <button on:click={() => activeSection = 'foodComparisonTool'}>Food Impact Comparison Tool</button>
   </nav>
 
   <!-- Section content that changes based on activeSection -->
@@ -40,6 +42,12 @@
   {#if activeSection === 'projectAims'} 
     <div transition:fade>
       <ProjectAims />
+    </div>
+  {/if}
+
+  {#if activeSection === 'foodComparisonTool'} 
+    <div transition:fade>
+      <FoodComparisonTool />
     </div>
   {/if}
 </main>

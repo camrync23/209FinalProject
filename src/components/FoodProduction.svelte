@@ -156,7 +156,7 @@
   
       <div id="emissions-pie-chart"></div> <!-- Pie chart on the right side -->
     </div>
-    <p>Food production contributes up to 30% of global GHG emissions, with significant variations across food types.</p>
+    <p>Food production is a significant contributor to greenhouse gas emissions and global warming. Agriculture, particularly livestock farming, is responsible for a large share of emissions, as it generates methane (CH₄) from animal digestion and manure, along with nitrous oxide (N₂O) from fertilizers. Additionally, food production requires land, water, and energy, all of which have environmental footprints. The process of deforestation to make way for agricultural land further increases carbon dioxide (CO₂) levels, while transportation, processing, and packaging add to the overall emissions. As the global population grows and demand for food rises, the environmental impacts of food production will continue to intensify, making it crucial to consider sustainable food choices. By understanding and reducing the carbon footprint of what we eat, we can make a meaningful impact on climate change and promote a healthier, more sustainable planet.</p>
   </section>
   
   <style>

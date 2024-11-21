@@ -62,3 +62,29 @@ footer a {
   color: #007bff;
   text-decoration: none;
 }
+
+#food-selection {
+  width: 200px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#food-selection label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.dropdowns {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#comparison-chart {
+  width: 600px;
+  height: 400px;
+  margin-top: 1rem;
+}
