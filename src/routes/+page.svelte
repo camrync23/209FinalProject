@@ -60,20 +60,22 @@
   }
 
   nav {
-    margin-bottom: 1rem;
-  }
+  display: flex;               /* Use flexbox layout */
+  justify-content: center;     /* Center the buttons horizontally */
+  gap: 1rem;                   /* Add spacing between buttons */
+  margin-bottom: 1rem;
+}
 
-  button {
-    margin-right: 1rem;
-    padding: 0.5rem;
-    background-color: #007b5e;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+button {
+  padding: 0.5rem 1rem;        /* Adjust padding for a balanced look */
+  background-color: #007b5e;   /* Keep your existing styles */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-  button:hover {
-    background-color: #005a42;
-  }
+button:hover {
+  background-color: #005a42;   /* Keep hover effect */
+}
 </style>
