@@ -254,9 +254,5 @@
       height: 400px;
     }
   
-    .y-axis-label {
-      font-size: 14px;
-      font-weight: bold;
-    }
   </style>
   
