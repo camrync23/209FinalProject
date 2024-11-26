@@ -1,12 +1,15 @@
 <script>
     import { onMount } from "svelte";
     
-    // Diet and Activity options
+    // Diet and Activity options with CO2 emissions
+    //Diet based on https://pmc.ncbi.nlm.nih.gov/articles/PMC10131583/
     const dietOptions = [
-      { name: "Vegan", co2: 1.5 },    // CO2 emissions per day (kg)
-      { name: "Vegetarian", co2: 3.0 },
-      { name: "Omnivore", co2: 5.0 },
-      { name: "Carnivore", co2: 7.0 }
+      { name: "Vegan", co2: 1.725 },    // CO2 emissions per day (kg) based on 2500 kcal per day
+      { name: "Vegetarian", co2: 2.9 },
+      { name: "Pescatarian", co2: 4.15 },
+      { name: "Omnivore", co2: 5.575 },
+      { name: "Paleo", co2: 6.55 },
+      { name: "Keto", co2: 7.275 }
     ];
     
     const activityOptions = [
