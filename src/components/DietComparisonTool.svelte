@@ -25,7 +25,7 @@
     
     let equivalenceMessage = "";
     let funFact = "";
-  
+    
     // Function to calculate equivalence message and fun fact
     function calculateEquivalence() {
       if (selectedDietLeft.co2 > selectedActivity.co2) {
@@ -33,10 +33,9 @@
         funFact = `Did you know? A jet emits around 100g of CO2 per minute of flight!`;
       } else {
         equivalenceMessage = `Your ${selectedActivity.name} equals about ${Math.round(selectedActivity.co2 / selectedDietLeft.co2)} days of ${selectedDietLeft.name} meals!`;
-        funFact = `A car emits about 0.4g of CO2 per mile driven!`;
       }
     }
-  
+    
     // Recalculate whenever diet or activity changes
     $: selectedDietLeft, selectedDietRight, selectedActivity, calculateEquivalence();
   </script>
@@ -112,50 +111,27 @@
     </div>
   
     <!-- Bottom Section: Diet vs Activity Comparison -->
-    <div class="activity-comparison-container">
-      <h3>Compare Diet to Activity</h3>
-  
-      <!-- Diet and Activity Selection -->
-      <div class="selection-container">
-        <!-- Diet Selection for Activity Comparison -->
-        <div class="selection diet">
-          <h3>Select your diet:</h3>
-          <div class="options">
-            {#each dietOptions as { name, co2, icon, tooltip }}
-              <button
-                class:selected={selectedDietLeft.name === name}
-                on:click={() => selectedDietLeft = { name, co2, icon, tooltip }}
-                title={tooltip}
-                transition:scale={{ duration: 150 }}
-                class="diet-button"
-              >
-                <span>{icon} {name}</span>
-              </button>
-            {/each}
-          </div>
-        </div>
-  
-        <!-- Activity Selection -->
-        <div class="selection diet">
-          <h3>Select your activity:</h3>
-          <div class="options">
-            {#each activityOptions as { name, co2, icon, tooltip }}
-              <button
-                class:selected={selectedActivity.name === name}
-                on:click={() => selectedActivity = { name, co2, icon, tooltip }}
-                title={tooltip}
-                transition:scale={{ duration: 150 }}
-                class="diet-button"
-              >
-                <span>{icon} {name}</span>
-              </button>
-            {/each}
-          </div>
+    <div class="selection-container">
+      <!-- Left Diet Selection for Activity Comparison -->
+      <div class="selection diet">
+        <h3>Select your diet:</h3>
+        <div class="options">
+          {#each dietOptions as { name, co2, icon, tooltip }}
+            <button
+              class:selected={selectedDietLeft.name === name}
+              on:click={() => selectedDietLeft = { name, co2, icon, tooltip }}
+              title={tooltip}
+              transition:scale={{ duration: 150 }}
+              class="diet-button"
+            >
+              <span>{icon} {name}</span>
+            </button>
+          {/each}
         </div>
       </div>
   
-      <!-- Comparison Icons and Message -->
-      <div class="activity-representation">
+      <!-- Comparison Icons and Message (In the Middle) -->
+      <div class="comparison-container">
         <div class="activity-container">
           {#each Array(Math.round(selectedActivity.co2 / selectedDietLeft.co2)) as _, index}
             <span class="icon">{selectedDietLeft.icon}</span>
@@ -166,8 +142,23 @@
         </div>
       </div>
   
-      <!-- Fun Fact -->
-      <p><strong>{funFact}</strong></p>
+      <!-- Right Activity Selection -->
+      <div class="selection diet">
+        <h3>Select your activity:</h3>
+        <div class="options">
+          {#each activityOptions as { name, co2, icon, tooltip }}
+            <button
+              class:selected={selectedActivity.name === name}
+              on:click={() => selectedActivity = { name, co2, icon, tooltip }}
+              title={tooltip}
+              transition:scale={{ duration: 150 }}
+              class="diet-button"
+            >
+              <span>{icon} {name}</span>
+            </button>
+          {/each}
+        </div>
+      </div>
     </div>
   </main>
   
@@ -180,7 +171,7 @@
       font-family: 'Arial', sans-serif;
     }
   
-    /* Container for Diets and Meters, keeps everything in a line */
+    /* Top Section: Comparing Two Diets */
     .selection-container {
       display: flex;
       justify-content: space-between;
@@ -190,7 +181,7 @@
       max-width: 1000px;
     }
   
-    /* Each diet selection (Left and Right) and Meters take up equal space */
+    /* Each diet selection and meters take up equal space */
     .selection {
       width: 20%; /* Fixed width for each diet selection */
       text-align: center;
@@ -202,7 +193,6 @@
       margin-bottom: 0.5rem;
     }
   
-    /* Options inside selection buttons */
     .options {
       display: flex;
       flex-direction: column;
@@ -210,7 +200,6 @@
       justify-content: center;
     }
   
-    /* Fixed size for diet selection buttons */
     .diet-button {
       background-color: #4CAF50;
       color: white;
@@ -266,7 +255,6 @@
       transition: height 0.3s ease-out;
     }
   
-    /* CO₂ Bubble Styling */
     .co2-bubble {
       position: relative;
       top: 10px;
@@ -281,23 +269,20 @@
       text-align: center;
     }
   
-    /* Activity Comparison Styling */
-    .activity-comparison-container {
-      text-align: center;
-      margin-top: 2rem;
-    }
-  
-    .activity-representation {
+    /* Bottom Section: Diet vs Activity Comparison */
+    .comparison-container {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
   
     .activity-container {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
       justify-content: center;
-      align-items: center;
+      margin-top: 20px;
     }
   
     .icon {
@@ -308,7 +293,7 @@
     .activity-label {
       font-size: 1.1rem;
       margin-top: 10px;
+      text-align: center;
     }
   </style>
-  
   
