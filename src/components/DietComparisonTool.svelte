@@ -1,65 +1,96 @@
 <script>
-    import { onMount } from "svelte";
+    import { scale, fade } from "svelte/transition";
     
-    // Diet and Activity options with CO2 emissions
-    //Diet based on https://pmc.ncbi.nlm.nih.gov/articles/PMC10131583/
+    // Updated diet options with corresponding CO2 emissions (kg/day)
     const dietOptions = [
-      { name: "Vegan", co2: 1.725 },    // CO2 emissions per day (kg) based on 2500 kcal per day
-      { name: "Vegetarian", co2: 2.9 },
-      { name: "Pescatarian", co2: 4.15 },
-      { name: "Omnivore", co2: 5.575 },
-      { name: "Paleo", co2: 6.55 },
-      { name: "Keto", co2: 7.275 }
+      { name: "Vegan", co2: 1.725, icon: "🌱", tooltip: "Plant-based diet, no animal products" },
+      { name: "Vegetarian", co2: 2.9, icon: "🥦", tooltip: "Plant-based diet including dairy and eggs" },
+      { name: "Pescatarian", co2: 4.15, icon: "🐟", tooltip: "Vegetarian diet with the inclusion of fish and seafood" },
+      { name: "Omnivore", co2: 5.575, icon: "🍖", tooltip: "Diet including all food types" },
+      { name: "Paleo", co2: 6.55, icon: "🍗", tooltip: "Focuses on meat, fish, vegetables, and fruits without grains, legumes, or dairy " },
+      { name: "Keto", co2: 7.275, icon: "🥩", tooltip: "High fat, low carb, meat-based diet" },
     ];
     
+    // Updated activity options with corresponding CO2 emissions (kg)
     const activityOptions = [
-      { name: "1 Hour of Jet Travel", co2: 100 },
-      { name: "Car Travel (100 miles)", co2: 30 },
-      { name: "Electricity Use (1 day)", co2: 12 }
+      { name: "1 Hour of Jet Travel", co2: 100, icon: "✈️", tooltip: "1 hour of flying emits 100 kg of CO2" },
+      { name: "Car Travel (100 miles)", co2: 30, icon: "🚗", tooltip: "Car travel emits 30 kg of CO2 per 100 miles" },
+      { name: "Electricity Use (1 day)", co2: 12, icon: "💡", tooltip: "Average electricity use per person for 1 day" }
     ];
-  
-    let selectedDiet = dietOptions[0]; // default to Vegan
-    let selectedActivity = activityOptions[0]; // default to Jet Travel
-  
+    
+    let selectedDiet = dietOptions[0];  // Default to Vegan
+    let selectedActivity = activityOptions[0];  // Default to Jet Travel
+    
     let equivalenceMessage = "";
     let funFact = "";
     
-    // Function to calculate the equivalence message
+    // Function to calculate the equivalence message and fun facts
     function calculateEquivalence() {
-      // Example equivalences for CO2 emissions
       if (selectedDiet.co2 > selectedActivity.co2) {
         equivalenceMessage = `Your ${selectedDiet.name} diet for one day equals ${Math.round(selectedDiet.co2 / selectedActivity.co2)} hours of flying!`;
-        funFact = `Did you know? A jet emits around 100kg of CO2 per hour of flight!`;
+        funFact = `Did you know? A jet emits around 100g of CO2 per minute of flight!`;
       } else {
         equivalenceMessage = `Your ${selectedActivity.name} equals about ${Math.round(selectedActivity.co2 / selectedDiet.co2)} days of ${selectedDiet.name} meals!`;
-        funFact = `A car emits about 0.4 kg of CO2 per mile driven!`;
+        funFact = `A car emits about 0.4g of CO2 per mile driven!`;
       }
     }
-  
-    // Watch for changes in diet or activity selection
+    
+    // Recalculate equivalence whenever diet or activity changes
     $: selectedDiet, selectedActivity, calculateEquivalence();
   </script>
   
   <main>
-    <!-- Diet and Activity Selection -->
+    <!-- Horizontal Layout for Diet, Meter, and Activity -->
     <div class="selection-container">
-      <div class="selection">
+      <!-- Diet Selection (Left) -->
+      <div class="selection diet">
         <h3>Select your diet:</h3>
         <div class="options">
-          {#each dietOptions as {name, co2}}
-            <button class:selected={selectedDiet.name === name} on:click={() => selectedDiet = { name, co2 }}>
-              {name}
+          {#each dietOptions as {name, co2, icon, tooltip}}
+            <button
+              class:selected={selectedDiet.name === name}
+              on:click={() => selectedDiet = { name, co2, icon, tooltip }}
+              title={tooltip}
+              transition:scale={{ duration: 150 }}
+              class="diet-button"
+            >
+              <span>{icon} {name}</span>
             </button>
           {/each}
         </div>
       </div>
   
-      <div class="selection">
+      <!-- CO₂ Emission Meter (Middle) -->
+      <div class="emission-meter-container">
+        <h4>CO₂ Emission Meter</h4>
+        <div class="meter">
+          <!-- CO₂ Fill -->
+          <div 
+            class="meter-fill" 
+            style="width: {Math.min(100, selectedDiet.co2 * 10)}%" 
+            transition:scale={{ duration: 300 }}
+          >
+          </div>
+        </div>
+        <!-- CO₂ Value Bubble -->
+        <div class="co2-bubble">
+          {selectedDiet.co2.toFixed(2)} kg CO₂/day
+        </div>
+      </div>
+  
+      <!-- Activity Selection (Right) -->
+      <div class="selection activity">
         <h3>Select an activity:</h3>
         <div class="options">
-          {#each activityOptions as {name, co2}}
-            <button class:selected={selectedActivity.name === name} on:click={() => selectedActivity = { name, co2 }}>
-              {name}
+          {#each activityOptions as {name, co2, icon, tooltip}}
+            <button
+              class:selected={selectedActivity.name === name}
+              on:click={() => selectedActivity = { name, co2, icon, tooltip }}
+              title={tooltip}
+              transition:scale={{ duration: 150 }}
+              class="activity-button"
+            >
+              <span>{icon} {name}</span>
             </button>
           {/each}
         </div>
@@ -70,18 +101,6 @@
     <div class="equivalence-message">
       <p>{equivalenceMessage}</p>
       <p><strong>{funFact}</strong></p>
-    </div>
-  
-    <!-- CO2 Emission Meter/Overflow -->
-    <div class="emission-meter">
-      <div class="meter">
-        <div class="meter-fill" style="height: {selectedDiet.co2}%"></div>
-      </div>
-      <div class="emission-bubbles">
-        {#each Array(Math.round(selectedDiet.co2)) as _, index (index)}
-          <div class="bubble" style="animation-delay: {index * 0.1}s"></div>
-        {/each}
-      </div>
     </div>
   </main>
   
@@ -96,9 +115,19 @@
   
     .selection-container {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       width: 100%;
       margin-bottom: 2rem;
+      max-width: 1000px;
+    }
+  
+    .selection {
+      width: 30%;
+      text-align: center;
+    }
+  
+    .diet, .activity {
+      margin: 0 1rem;
     }
   
     .selection h3 {
@@ -109,6 +138,7 @@
     .options {
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
   
     button {
@@ -119,10 +149,24 @@
       margin: 5px;
       cursor: pointer;
       border-radius: 5px;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
   
     button.selected {
       background-color: #45a049;
+    }
+  
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    button:active {
+      transform: scale(0.98);
     }
   
     .equivalence-message {
@@ -131,54 +175,53 @@
       font-size: 1.2rem;
     }
   
-    .emission-meter {
-      position: relative;
-      width: 200px;
-      height: 300px;
-      margin-top: 2rem;
+    /* CO₂ Emission Meter Styles */
+    .emission-meter-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+      text-align: center;
     }
   
     .meter {
-      background-color: #ddd;
       width: 100%;
-      height: 100%;
-      border-radius: 10px;
+      height: 30px;
+      background-color: #ddd;
+      border-radius: 15px;
       overflow: hidden;
+      margin-top: 1rem;
+      position: relative;
     }
   
     .meter-fill {
-      background-color: #ff7043;
-      width: 100%;
-      transition: height 0.3s ease;
-    }
-  
-    .emission-bubbles {
+      background-color: #FF7043;
+      height: 100%;
       position: absolute;
-      top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      pointer-events: none;
+      transition: width 0.3s ease-out;
     }
   
-    .bubble {
-      width: 20px;
-      height: 20px;
-      background-color: #FFEB3B;
-      border-radius: 50%;
-      margin: 5px;
-      opacity: 0.8;
-      animation: floatBubble 4s ease-in-out infinite;
+    /* CO₂ Value Bubble Styling */
+    .co2-bubble {
+      position: relative;
+      top: 10px; /* Adjust position to be right below the meter */
+      width: auto;
+      padding: 5px 10px;
+      background-color: #FF7043;
+      color: white;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
   
-    @keyframes floatBubble {
-      0% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-30px) scale(1.5); }
-      100% { transform: translateY(0) scale(1); }
+    .equivalence-message {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      max-width: 80%;
+      text-align: center;
     }
   </style>
   
