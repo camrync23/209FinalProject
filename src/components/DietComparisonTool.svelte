@@ -11,31 +11,44 @@
       { name: "Keto", co2: 7.275, icon: "🥩", tooltip: "High fat, low carb, meat-based diet" },
     ];
     
-    // Default diet selection
+    // Updated activity options with corresponding CO2 emissions (kg)
+    const activityOptions = [
+      { name: "1 Hour of Jet Travel", co2: 100, icon: "✈️", tooltip: "1 hour of flying emits 100 kg of CO2" },
+      { name: "Car Travel (100 miles)", co2: 30, icon: "🚗", tooltip: "Car travel emits 30 kg of CO2 per 100 miles" },
+      { name: "Electricity Use (1 day)", co2: 12, icon: "💡", tooltip: "Average electricity use per person for 1 day" }
+    ];
+    
+    // Default diet and activity selection
     let selectedDietLeft = dietOptions[0];  // Default to Vegan on the left
     let selectedDietRight = dietOptions[1]; // Default to Vegetarian on the right
+    let selectedActivity = activityOptions[0]; // Default to Jet Travel
     
-    // Function to calculate equivalence (currently not in use here but can be expanded)
     let equivalenceMessage = "";
     let funFact = "";
-    
+  
+    // Function to calculate equivalence message and fun fact
     function calculateEquivalence() {
-      equivalenceMessage = `Your left diet (${selectedDietLeft.name}) vs right diet (${selectedDietRight.name})`;
-      funFact = `Did you know? A vegan diet typically emits far less CO₂ than a diet that includes animal products!`;
+      if (selectedDietLeft.co2 > selectedActivity.co2) {
+        equivalenceMessage = `Your ${selectedDietLeft.name} diet for one day equals ${Math.round(selectedDietLeft.co2 / selectedActivity.co2)} hours of flying!`;
+        funFact = `Did you know? A jet emits around 100g of CO2 per minute of flight!`;
+      } else {
+        equivalenceMessage = `Your ${selectedActivity.name} equals about ${Math.round(selectedActivity.co2 / selectedDietLeft.co2)} days of ${selectedDietLeft.name} meals!`;
+        funFact = `A car emits about 0.4g of CO2 per mile driven!`;
+      }
     }
-    
-    // Recalculate whenever diet changes
-    $: selectedDietLeft, selectedDietRight, calculateEquivalence();
+  
+    // Recalculate whenever diet or activity changes
+    $: selectedDietLeft, selectedDietRight, selectedActivity, calculateEquivalence();
   </script>
   
   <main>
-    <!-- Top Section: Comparing Two Diets (Two Vertical Meters) -->
+    <!-- Top Section: Comparing Two Diets -->
     <div class="selection-container">
       <!-- Left Diet Selection -->
       <div class="selection diet">
         <h3>Select your first diet:</h3>
         <div class="options">
-          {#each dietOptions as {name, co2, icon, tooltip}}
+          {#each dietOptions as { name, co2, icon, tooltip }}
             <button
               class:selected={selectedDietLeft.name === name}
               on:click={() => selectedDietLeft = { name, co2, icon, tooltip }}
@@ -83,7 +96,7 @@
       <div class="selection diet">
         <h3>Select your second diet:</h3>
         <div class="options">
-          {#each dietOptions as {name, co2, icon, tooltip}}
+          {#each dietOptions as { name, co2, icon, tooltip }}
             <button
               class:selected={selectedDietRight.name === name}
               on:click={() => selectedDietRight = { name, co2, icon, tooltip }}
@@ -98,10 +111,62 @@
       </div>
     </div>
   
-    <!-- Bottom Section: Diet vs Activity Comparison (not yet implemented) -->
+    <!-- Bottom Section: Diet vs Activity Comparison -->
     <div class="activity-comparison-container">
       <h3>Compare Diet to Activity</h3>
-      <p>{equivalenceMessage}</p>
+  
+      <!-- Diet and Activity Selection -->
+      <div class="selection-container">
+        <!-- Diet Selection for Activity Comparison -->
+        <div class="selection diet">
+          <h3>Select your diet:</h3>
+          <div class="options">
+            {#each dietOptions as { name, co2, icon, tooltip }}
+              <button
+                class:selected={selectedDietLeft.name === name}
+                on:click={() => selectedDietLeft = { name, co2, icon, tooltip }}
+                title={tooltip}
+                transition:scale={{ duration: 150 }}
+                class="diet-button"
+              >
+                <span>{icon} {name}</span>
+              </button>
+            {/each}
+          </div>
+        </div>
+  
+        <!-- Activity Selection -->
+        <div class="selection diet">
+          <h3>Select your activity:</h3>
+          <div class="options">
+            {#each activityOptions as { name, co2, icon, tooltip }}
+              <button
+                class:selected={selectedActivity.name === name}
+                on:click={() => selectedActivity = { name, co2, icon, tooltip }}
+                title={tooltip}
+                transition:scale={{ duration: 150 }}
+                class="diet-button"
+              >
+                <span>{icon} {name}</span>
+              </button>
+            {/each}
+          </div>
+        </div>
+      </div>
+  
+      <!-- Comparison Icons and Message -->
+      <div class="activity-representation">
+        <div class="activity-container">
+          {#each Array(Math.round(selectedActivity.co2 / selectedDietLeft.co2)) as _, index}
+            <span class="icon">{selectedDietLeft.icon}</span>
+          {/each}
+        </div>
+        <div class="activity-label">
+          <span>{Math.round(selectedActivity.co2 / selectedDietLeft.co2)} Days of {selectedDietLeft.name} ≈ {selectedActivity.name}</span>
+        </div>
+      </div>
+  
+      <!-- Fun Fact -->
       <p><strong>{funFact}</strong></p>
     </div>
   </main>
@@ -216,11 +281,34 @@
       text-align: center;
     }
   
+    /* Activity Comparison Styling */
     .activity-comparison-container {
       text-align: center;
       margin-top: 2rem;
     }
-  </style>
   
+    .activity-representation {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .activity-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .icon {
+      font-size: 2rem;
+      margin: 0 5px;
+    }
+  
+    .activity-label {
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+  </style>
   
   
