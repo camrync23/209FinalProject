@@ -14,10 +14,9 @@
 <main>
   <!-- Navigation for changing sections -->
   <nav>
-    <button on:click={() => activeSection = 'greenhouseGases'}>What Are Greenhouse Gases?</button>
+    <button on:click={() => activeSection = 'projectAims'}>What This Project Aims to Explore</button>
     <button on:click={() => activeSection = 'climateChange'}>GHGs and Climate Change</button>
     <button on:click={() => activeSection = 'foodProduction'}>Why Food Production Matters</button>
-    <button on:click={() => activeSection = 'projectAims'}>What This Project Aims to Explore</button>
     <button on:click={() => activeSection = 'foodComparisonTool'}>Food Impact Comparison Tool</button>
     <button on:click={() => activeSection = 'dietComparisonTool'}>Diet Impact Comparison Tool</button>
   </nav>

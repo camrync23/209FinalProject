@@ -3,16 +3,15 @@
   import * as d3 from 'd3';
   import allMetricFood from '../data/all_metric_food.json';
 
-  let foodItems = []; // List of all food items
-  let foodCategories = {}; // Categories of food items
-  let foodCheckStatus = {}; // Tracks whether a food is selected or not
-  let selectedFoods = []; // Foods that are selected
-  let selectedCategory = ''; // Selected food category
+  let foodItems = [];
+  let foodCategories = {};
+  let foodCheckStatus = {};
+  let selectedFoods = [];
+  let selectedCategory = '';
   let selectedImpact = 'Greenhouse gas emissions';
   let selectedMeasurement = 'per 1000kcal';
-  let unavailableMetric = false; // Track if unavailable metric is selected
+  let unavailableMetric = false;
 
-  // Load food items and categorize them
   onMount(() => {
     foodItems = allMetricFood.map((item) => item["Food product"]);
     foodCategories = allMetricFood.reduce((acc, item) => {
@@ -22,19 +21,14 @@
       return acc;
     }, {});
 
-    // Initialize foodCheckStatus with all foods set to false (not selected)
     foodItems.forEach((food) => {
       foodCheckStatus[food] = false;
     });
 
-    // Initialize selectedFoods to the empty array
     selectedFoods = [];
-    
-    // Draw the chart initially
     drawChart();
   });
 
-  // Helper function to build the key for accessing data
   const getMetricKey = (impact, measurement) => {
     const impactKeyMap = {
       'Greenhouse gas emissions': 'Greenhouse gas emissions',
@@ -65,7 +59,6 @@
     return `${impactKey} ${measurementKey} (${unit} ${measurementKey})`;
   };
 
-  // Function to generate the axis label based on the selected metric
   const getAxisLabel = () => {
     const metricMap = {
       'Greenhouse gas emissions': 'Greenhouse gas emissions (kgCO₂eq)',
@@ -84,11 +77,7 @@
     return `${metricMap[selectedImpact]} ${measurementMap[selectedMeasurement]}`;
   };
 
-  // Draw the chart
   const drawChart = () => {
-    console.log('Drawing chart with selected foods:', selectedFoods);
-
-    // Clear the chart container before drawing new chart
     const container = d3.select('#comparison-chart-container');
     container.html('');
 
@@ -101,8 +90,7 @@
     const height = 400;
     const margin = { top: 20, right: 20, bottom: 60, left: 80 };
 
-    const svg = container
-      .append('svg')
+    const svg = container.append('svg')
       .attr('width', width)
       .attr('height', height)
       .append('g')
@@ -112,25 +100,13 @@
     const chartHeight = height - margin.top - margin.bottom;
 
     const key = getMetricKey(selectedImpact, selectedMeasurement);
-
-    // Check if the metric is available
-    if (selectedImpact === 'Greenhouse gas emissions' && selectedMeasurement === 'per kilogram') {
-      unavailableMetric = true;
-      alert('Greenhouse gas emissions per kilogram is not available. Please select a different combination.');
-    } else {
-      unavailableMetric = false;
-    }
-
     const comparisonData = selectedFoods.map((food) => {
       const dataForFood = allMetricFood.find((item) => item["Food product"] === food);
-
       if (dataForFood) {
-        const key = getMetricKey(selectedImpact, selectedMeasurement);
         const value = dataForFood[key] || 0;
         return { food, value };
-      } else {
-        return { food, value: 0 };
       }
+      return { food, value: 0 };
     });
 
     const xScale = d3.scaleBand()
@@ -173,171 +149,155 @@
       .attr('y', -60)
       .style('text-anchor', 'middle')
       .text(getAxisLabel());
-
-    svg.selectAll('.label')
-      .data(comparisonData)
-      .enter()
-      .append('text')
-      .attr('x', (d) => xScale(d.food) + xScale.bandwidth() / 2)
-      .attr('y', (d) => yScale(d.value) - 5)
-      .attr('text-anchor', 'middle')
-      .style('font-size', '12px')
-      .style('fill', '#000')
-      .text((d) => d.value.toFixed(2));
   };
 
-  // Handle changes to selected foods (checkboxes)
   const handleFoodSelection = () => {
     selectedFoods = foodItems.filter((food) => foodCheckStatus[food]);
-    console.log('Selected foods:', selectedFoods);
-    drawChart(); // Re-render chart after selecting new foods
+    drawChart();
   };
 
-  // Handle changes to selected category
   const handleCategorySelection = () => {
     if (selectedCategory === '') {
-      selectedFoods = foodItems.slice(); // Select all foods if no category is selected
+      selectedFoods = foodItems.slice();
     } else {
       selectedFoods = foodCategories[selectedCategory] || [];
     }
-    console.log('Selected foods after category change:', selectedFoods);
-    drawChart(); // Re-render chart after category selection
+    drawChart();
   };
 
-  // Select or clear all foods
   const selectAllFoods = () => {
-    selectedFoods = foodItems.slice(); // Select all foods
-    selectedCategory = ''; // Reset category selection
-    foodItems.forEach((food) => foodCheckStatus[food] = true); // Check all boxes
+    selectedFoods = foodItems.slice();
+    selectedCategory = '';
+    foodItems.forEach((food) => foodCheckStatus[food] = true);
     drawChart();
   };
 
   const clearAllFoods = () => {
-    selectedFoods = []; // Clear all foods
-    selectedCategory = ''; // Reset category selection
-    foodItems.forEach((food) => foodCheckStatus[food] = false); // Uncheck all boxes
+    selectedFoods = [];
+    selectedCategory = '';
+    foodItems.forEach((food) => foodCheckStatus[food] = false);
     drawChart();
   };
 </script>
 
-<div class="tool-container">
-  <div class="left-panel">
-    <!-- Impact and Measurement Selections -->
-    <div class="selection-container">
-      <div class="impact-selection">
-        <label for="impact">Select Impact:</label>
-        <select id="impact" bind:value={selectedImpact} on:change={drawChart}>
+<section id="food-impact-tool">
+  <h2>Food Impact Comparison Tool</h2>
+  <div class="content">
+    <p>
+      Use this tool to explore the environmental impacts of different foods. Select metrics, food categories, and specific items to visualize how their production impacts the environment.
+    </p>
+
+    <div class="tool-container">
+      <div class="control-panel">
+        <label for="impact-select">Select Impact:</label>
+        <select id="impact-select" bind:value={selectedImpact} on:change={drawChart}>
           <option value="Greenhouse gas emissions">Greenhouse gas emissions</option>
           <option value="Eutrophying emissions">Eutrophying emissions</option>
           <option value="Freshwater withdrawals">Freshwater withdrawals</option>
           <option value="Land use">Land use</option>
           <option value="Scarcity-weighted water use">Scarcity-weighted water use</option>
         </select>
-      </div>
 
-      <div class="measurement-selection">
-        <label for="measurement">Select Measurement:</label>
-        <select id="measurement" bind:value={selectedMeasurement} on:change={drawChart}>
+        <label for="measurement-select">Select Measurement:</label>
+        <select id="measurement-select" bind:value={selectedMeasurement} on:change={drawChart}>
           <option value="per 1000kcal">per 1000 kcal</option>
-          <option value="per kilogram">per kg</option>
+          <option value="per kilogram">per kilogram</option>
           <option value="per 100g protein">per 100g protein</option>
         </select>
+
+        <label for="category-select">Select Category:</label>
+        <select id="category-select" bind:value={selectedCategory} on:change={handleCategorySelection}>
+          <option value="">All</option>
+          {#each Object.keys(foodCategories) as category}
+            <option value={category}>{category}</option>
+          {/each}
+        </select>
+        <div>
+          <button on:click={selectAllFoods}>Select All Foods</button>
+          <button on:click={clearAllFoods}>Clear Selection</button>
+        </div>
       </div>
-    </div>
 
-    <!-- Select All / Clear All -->
-    <div class="select-all-clear-container">
-      <button on:click={selectAllFoods}>Select All</button>
-      <button on:click={clearAllFoods}>Clear All</button>
-    </div>
-
-    <!-- Category Selection -->
-    <div class="category-selection">
-      <label for="category">Select Category:</label>
-      <select id="category" bind:value={selectedCategory} on:change={handleCategorySelection}>
-        <option value="">All</option>
-        {#each Object.keys(foodCategories) as category}
-          <option value={category}>{category}</option>
-        {/each}
-      </select>
-    </div>
-
-    <!-- Scrollable Food Selection -->
-    <div class="food-selection">
-      <div class="checkbox-container">
-        {#each foodItems as food}
-          <label>
-            <input type="checkbox" bind:checked={foodCheckStatus[food]} on:change={handleFoodSelection}>
-            {food}
-          </label>
-        {/each}
-      </div>
+      <div id="comparison-chart-container" class="chart-container"></div>
     </div>
   </div>
 
-  <!-- Chart Display -->
-  <div class="chart-container">
-    <div id="comparison-chart-container" class="chart-container"></div>
+  <div class="solution">
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>Food production contributes significantly to greenhouse gas emissions and other environmental impacts.</li>
+      <li>Choosing lower-impact foods can help reduce your personal carbon footprint.</li>
+      <li>Making informed decisions can lead to a healthier planet for future generations.</li>
+    </ul>
   </div>
-</div>
-
+</section>
 
 <style>
-.tool-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  height: 100vh; /* Ensures the container takes the full height */
-}
+  /* General Styling */
+  #food-impact-tool {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+  }
 
-.left-panel {
-  width: 300px;
-  padding: 20px;
-  box-sizing: border-box; /* Ensures padding doesn't affect layout */
-  display: flex;
-  flex-direction: column;
-  height: 100%; /* Full height */
-}
+  h2 {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 20px;
+  }
 
-.selection-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+  .content {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-.impact-selection,
-.measurement-selection {
-  width: 100%; /* Full width */
-}
+  .tool-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
-.select-all-clear-container {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
+  .control-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
 
-.category-selection {
-  margin-top: 20px;
-}
+  .control-panel label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
 
-.food-selection {
-  margin-top: 20px;
-  height: 250px; /* Set a fixed height for the food selection area */
-  overflow-y: auto; /* Allow scrolling if the content exceeds the height */
-}
+  .control-panel select, .control-panel button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
 
-.checkbox-container {
-  padding-right: 15px; /* Add some space to the right of checkboxes */
-}
+  .chart-container {
+    text-align: center;
+  }
 
-.chart-container {
-  flex-grow: 1;
-  margin-top: 20px;
-}
+  .solution {
+    background-color: #eaf6f5;
+    padding: 1rem;
+    border-left: 5px solid #007b5e;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
 
-.food-selection label {
-  font-size: 14px;
-  display: block; /* Ensures checkboxes are stacked vertically */
-}
+  .solution h3 {
+    color: #007b5e;
+  }
 
+  .solution ul {
+    padding-left: 1.5rem;
+    margin: 0;
+  }
 </style>

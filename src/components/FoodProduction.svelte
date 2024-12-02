@@ -53,8 +53,8 @@
 
     emissionsData = averages;
 
-    const width = 600;
-    const height = 400;
+    const width = 700;
+    const height = 500;
     const radius = Math.min(width, height) / 2;
 
     const arc = d3.arc().innerRadius(0).outerRadius(radius);
@@ -95,13 +95,11 @@
     arcs.append("text")
       .attr("transform", d => {
         const [x, y] = arc.centroid(d);
-        const rotation = ((d.startAngle + d.endAngle) / 2) * (180 / Math.PI);
-        return `translate(${x}, ${y}) rotate(${rotation})`;
+        return `translate(${x}, ${y})`;
       })
       .attr("dy", "0.35em")
       .style("text-anchor", "middle")
       .style("font-size", "12px")
-      .style("font-family", "Arial, sans-serif")
       .style("fill", d => {
         const color = d3.color(categoryColors[d.data.label]);
         return color && color.luminance() > 0.5 ? "#333" : "#fff";
@@ -216,7 +214,6 @@
 
   /* Pie Chart and Description */
   #chart-wrapper {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -224,9 +221,9 @@
   }
 
   #emissions-pie-chart {
+    width: 700px;
+    height: 500px;
     position: relative;
-    width: 600px;
-    height: 400px;
   }
 
   #overlay {
@@ -235,9 +232,21 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #overlay h3 {
+    font-size: 1.5rem;
     color: #333;
-    font-family: Arial, sans-serif;
-    pointer-events: none;
+    margin-bottom: 0.5rem;
+  }
+
+  #overlay p {
+    font-size: 1rem;
+    color: #555;
   }
 
   #overlay h3 {
@@ -282,7 +291,3 @@
     margin-top: 1rem;
   }
 </style>
-
-
-
-
