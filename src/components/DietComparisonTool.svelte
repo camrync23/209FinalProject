@@ -91,6 +91,7 @@
       <div class="stripe"></div>
       <div class="content">
         <h2 class="fun-fact-title">Fun Fact</h2>
+        <h4 class="fun-fact-subtitle">Pick a diet from the diet selection on the left to see a fun fact about its environmental impact.</h4>
         <p class="fun-fact">
           Did you know? {randomActivity.icon} {randomActivity.name} emits about {randomActivity.co2} kg of CO₂!
           That's equivalent to:
@@ -103,6 +104,14 @@
         <p class="fun-fact">{Math.ceil(randomActivity.co2 / selectedDietLeft.co2)} meals of a {selectedDietLeft.name} diet!</p>
         <button class="fun-fact-button" on:click={getRandomActivity}>Click here for another fun fact</button>
       </div>
+    </div>
+    <div class="solution">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Plant-based diets have a lower environmental impact compared to meat-heavy diets.</li>
+        <li>You don't have to completely change your diet to make a difference! Even switching to a plant-based meal or choosing plant-based options for just one day a week can have a positive environmental impact.</li>
+        <li>Small changes add up: Every time you make a more eco-friendly food choice, you're helping to reduce the strain on our planet. Start with small steps, and you’ll be part of the solution!</li>
+      </ul>
     </div>
   </div>
 </main>
@@ -229,7 +238,6 @@
     margin-top: 1rem;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     align-items: center;
-    padding: 30px; /* Increased padding */
     border-left: 5px solid #007b5e;
   }
 
@@ -250,6 +258,13 @@
     font-weight: bold;
     margin-bottom: 25px; /* Increased spacing below title */
     color: #2E7D32; /* Dark green */
+  }
+
+  .fun-fact-subtitle {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
   }
 
   .fun-fact {
@@ -290,5 +305,22 @@
   .fun-fact-button:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .solution {
+    background-color: #eaf6f5;
+    padding: 1rem;
+    border-left: 5px solid #007b5e;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+
+  .solution h3 {
+    color: #007b5e;
+  }
+
+  .solution ul {
+    padding-left: 1.5rem;
+    margin: 0;
   }
 </style>
