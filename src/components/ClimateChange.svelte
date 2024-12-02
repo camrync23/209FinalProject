@@ -166,9 +166,9 @@
 </script>
 
 <section id="ghg-climate-change">
-  <h2>The Connection Between GHGs and Climate Change</h2>
+  <h2 class="page-title">The Connection Between GHGs and Climate Change</h2>
   <div id="co2-temperature-chart"></div>
-  <p>
+  <p class="description">
     This warming effect is the primary driver of climate change, causing disruptions in weather patterns, rising sea levels, and more extreme weather events. As global temperatures increase, ecosystems and human societies face greater challenges, including heatwaves, droughts, and flooding. The rapid rise in GHGs due to human activities has accelerated these changes, underscoring the urgent need for action to reduce emissions and mitigate climate impacts.
   </p>
 </section>
@@ -176,10 +176,27 @@
 <style>
   section {
     padding: 2rem;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, #f7fcfc, #eaf4f4);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
   }
 
   h2 {
@@ -200,9 +217,4 @@
     align-items: center;
   }
 
-  svg {
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
 </style>
