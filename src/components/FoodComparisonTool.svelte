@@ -7,10 +7,11 @@
   let foodCategories = {};
   let foodCheckStatus = {};
   let selectedFoods = [];
-  let selectedCategory = '';
+  let selectedCategory = [];
   let selectedImpact = 'Greenhouse gas emissions';
   let selectedMeasurement = 'per 1000kcal';
   let unavailableMetric = false;
+  let dropdownOpen = false;
 
   onMount(() => {
     foodItems = allMetricFood.map((item) => item["Food product"]);
@@ -28,6 +29,10 @@
     selectedFoods = [];
     drawChart();
   });
+
+  const toggleDropdown = () => {
+    dropdownOpen = !dropdownOpen;
+  };
 
   const getMetricKey = (impact, measurement) => {
     const impactKeyMap = {
@@ -100,6 +105,13 @@
     const chartHeight = height - margin.top - margin.bottom;
 
     const key = getMetricKey(selectedImpact, selectedMeasurement);
+
+        // Check if the metric is available
+    if (selectedImpact === 'Greenhouse gas emissions' && selectedMeasurement === 'per kilogram') {
+      unavailableMetric = true;
+      alert('Greenhouse gas emissions per kilogram is not available. Please select a different combination.');
+    }
+
     const comparisonData = selectedFoods.map((food) => {
       const dataForFood = allMetricFood.find((item) => item["Food product"] === food);
       if (dataForFood) {
@@ -157,13 +169,13 @@
   };
 
   const handleCategorySelection = () => {
-    if (selectedCategory === '') {
-      selectedFoods = foodItems.slice();
-    } else {
-      selectedFoods = foodCategories[selectedCategory] || [];
-    }
+    selectedFoods = foodItems.filter((food) =>
+      selectedCategory.some((category) => foodCategories[category]?.includes(food))
+    );
     drawChart();
   };
+ 
+
 
   const selectAllFoods = () => {
     selectedFoods = foodItems.slice();
@@ -205,19 +217,32 @@
           <option value="per 100g protein">per 100g protein</option>
         </select>
 
-        <label for="category-select">Select Category:</label>
-        <select id="category-select" bind:value={selectedCategory} on:change={handleCategorySelection}>
-          <option value="">All</option>
-          {#each Object.keys(foodCategories) as category}
-            <option value={category}>{category}</option>
-          {/each}
-        </select>
+        <div id="category-dropdown-container">
+          <button id="category-dropdown-button" on:click={toggleDropdown}>
+            Select Categories
+          </button>
+          {#if dropdownOpen}
+            <div id="category-dropdown">
+              {#each Object.keys(foodCategories) as category}
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id={category}
+                    value={category}
+                    bind:group={selectedCategory}
+                    on:change={handleCategorySelection}
+                  />
+                  <label for={category}>{category}</label>
+                </div>
+              {/each}
+            </div>
+          {/if}
+        </div>
         <div>
-          <button on:click={selectAllFoods}>Select All Foods</button>
-          <button on:click={clearAllFoods}>Clear Selection</button>
+          <button on:click={selectAllFoods}>Select All</button>
+          <button on:click={clearAllFoods}>Deselect All</button>
         </div>
       </div>
-
       <div id="comparison-chart-container" class="chart-container"></div>
     </div>
   </div>
@@ -300,4 +325,32 @@
     padding-left: 1.5rem;
     margin: 0;
   }
+
+  /* Add dropdown styling and ensure responsiveness */
+#category-dropdown-container {
+  position: relative;
+}
+
+#category-dropdown-button {
+  padding: 10px 20px;
+  background: #007b5e;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+#category-dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-height: 200px; /* Add max-height for scrolling */
+  overflow-y: auto;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+}
+
+
 </style>
