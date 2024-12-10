@@ -1,6 +1,6 @@
 <script>
   import { fade } from 'svelte/transition'; 
-  import Modal from '../components/Modal.svelte'; 
+  import Modal from '../components/modal.svelte'; 
   import GreenhouseGases from '../components/GreenhouseGases.svelte';
   import ClimateChange from '../components/ClimateChange.svelte';
   import FoodProduction from '../components/FoodProduction.svelte';
