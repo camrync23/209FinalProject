@@ -102,7 +102,7 @@
           {/each}
         </div>
         <p class="fun-fact">{Math.ceil(randomActivity.co2 / selectedDietLeft.co2)} meals of a {selectedDietLeft.name} diet!</p>
-        <button class="fun-fact-button" on:click={getRandomActivity}>Click here for another fun fact</button>
+        <button class="fun-fact-button" on:click={getRandomActivity}>Click here for another fun fact! </button>
       </div>
     </div>
     <div class="solution">
@@ -124,7 +124,7 @@
     margin-bottom: 30px;
     max-width: 800px;
     line-height: 1.6;
-    margin: 0 auto 30px auto; /* Center the text and add spacing */
+    margin: 0 auto 30px auto; 
   }
   
   .page-container {
