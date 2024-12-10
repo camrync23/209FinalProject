@@ -1,5 +1,6 @@
 <script>
-  import { fade } from 'svelte/transition';  // Import transition
+  import { fade } from 'svelte/transition'; 
+  import Modal from '../components/Modal.svelte'; 
   import GreenhouseGases from '../components/GreenhouseGases.svelte';
   import ClimateChange from '../components/ClimateChange.svelte';
   import FoodProduction from '../components/FoodProduction.svelte';
@@ -7,12 +8,23 @@
   import FoodComparisonTool from '../components/FoodComparisonTool.svelte';
   import DietComparisonTool from '../components/DietComparisonTool.svelte';
 
-  // Track which section is active
-  let activeSection = 'projectAims';  // Start with the first section
+  let activeSection = 'projectAims'; 
+
+  let showModal = false;
+
+  const closeModal = () => {
+    showModal = false;
+  };
+
+  setTimeout(() => {
+    showModal = true;
+  }, 800); 
 </script>
 
+<Modal showModal={showModal} onClose={closeModal} />
+
 <main>
-  <!-- Navigation for changing sections -->
+
   <nav>
     <button on:click={() => activeSection = 'projectAims'}>What This Project Aims to Explore</button>
     <button on:click={() => activeSection = 'climateChange'}>GHGs and Climate Change</button>
@@ -21,38 +33,37 @@
     <button on:click={() => activeSection = 'dietComparisonTool'}>Diet Impact Comparison Tool</button>
   </nav>
 
-  <!-- Section content that changes based on activeSection -->
-  {#if activeSection === 'greenhouseGases'} 
+  {#if activeSection === 'greenhouseGases'}
     <div transition:fade>
       <GreenhouseGases />
     </div>
   {/if}
 
-  {#if activeSection === 'climateChange'} 
+  {#if activeSection === 'climateChange'}
     <div transition:fade>
       <ClimateChange />
     </div>
   {/if}
 
-  {#if activeSection === 'foodProduction'} 
+  {#if activeSection === 'foodProduction'}
     <div transition:fade>
       <FoodProduction />
     </div>
   {/if}
 
-  {#if activeSection === 'projectAims'} 
+  {#if activeSection === 'projectAims'}
     <div transition:fade>
       <ProjectAims />
     </div>
   {/if}
 
-  {#if activeSection === 'foodComparisonTool'} 
+  {#if activeSection === 'foodComparisonTool'}
     <div transition:fade>
       <FoodComparisonTool />
     </div>
   {/if}
 
-  {#if activeSection === 'dietComparisonTool'} 
+  {#if activeSection === 'dietComparisonTool'}
     <div transition:fade>
       <DietComparisonTool />
     </div>
@@ -67,22 +78,22 @@
   }
 
   nav {
-  display: flex;               /* Use flexbox layout */
-  justify-content: center;     /* Center the buttons horizontally */
-  gap: 1rem;                   /* Add spacing between buttons */
-  margin-bottom: 1rem;
-}
+    display: flex; 
+    justify-content: center; 
+    gap: 1rem; 
+    margin-bottom: 1rem;
+  }
 
-button {
-  padding: 0.5rem 1rem;        /* Adjust padding for a balanced look */
-  background-color: #007b5e;   /* Keep your existing styles */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+  button {
+    padding: 0.5rem 1rem; 
+    background-color: #007b5e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-button:hover {
-  background-color: #005a42;   /* Keep hover effect */
-}
+  button:hover {
+    background-color: #005a42; 
+  }
 </style>
