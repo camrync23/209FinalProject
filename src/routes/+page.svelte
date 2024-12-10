@@ -8,7 +8,7 @@
   import DietComparisonTool from '../components/DietComparisonTool.svelte';
 
   // Track which section is active
-  let activeSection = 'greenhouseGases';  // Start with the first section
+  let activeSection = 'projectAims';  // Start with the first section
 </script>
 
 <main>
