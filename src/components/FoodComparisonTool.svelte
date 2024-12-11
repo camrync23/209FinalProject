@@ -13,6 +13,17 @@
   let unavailableMetric = false;
   let dropdownOpen = false;
 
+  const categoryEmojis = {
+    "Grains & Cereals": "🌾",
+    "Nuts & Seeds": "🥜",
+    "Vegetables": "🥦",
+    "Fruits": "🍎",
+    "Beverages": "☕",
+    "Chocolate": "🍫",
+    "Animal Protein": "🍖",
+    "Dairy Products": "🥛",
+  };
+
   onMount(() => {
     foodItems = allMetricFood.map((item) => item["Food product"]);
     foodCategories = allMetricFood.reduce((acc, item) => {
@@ -232,7 +243,8 @@
                     bind:group={selectedCategory}
                     on:change={handleCategorySelection}
                   />
-                  <label for={category}>{category}</label>
+                  <label for={category}>
+                    {categoryEmojis[category] || ''} {category}</label>
                 </div>
               {/each}
             </div>
@@ -344,8 +356,8 @@
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 100%;
-  max-height: 200px; /* Add max-height for scrolling */
+  width: 105%;
+  max-height: 250px; /* Add max-height for scrolling */
   overflow-y: auto;
   top: 100%;
   left: 0;
