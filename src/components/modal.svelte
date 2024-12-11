@@ -1,10 +1,10 @@
 <script>
-    export let showModal = false; // Control visibility of the modal
-    export let onClose = () => {}; // Callback for closing the modal
+    export let showModal = false; 
+    export let onClose = () => {}; 
   
     const closeModal = () => {
       showModal = false;
-      onClose(); // Notify parent to update state
+      onClose(); 
     };
   </script>
   

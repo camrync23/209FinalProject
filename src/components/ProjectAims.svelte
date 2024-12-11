@@ -46,7 +46,7 @@
     <li><strong>Prebuilt Diet Presets:</strong> Compare the environmental impacts of common diets, such as vegetarian or meat-heavy diets, to help users make sustainable choices.</li>
   </ul>
 
-  <p>Ready to explore the environmental impacts of your food choices? Use the interactive tools below to start building your sustainable diet today!</p>
+  <p>Ready to explore the environmental impacts of your food choices? Use the interactive tools in the tabs above to start building your sustainable diet today!</p>
 </section>
 
 <style>
